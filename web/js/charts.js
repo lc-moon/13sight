@@ -50,6 +50,12 @@ function createAUMChart(canvasId, labels, values) {
   // 천달러 → 억달러 변환: 1억달러 = 100,000천달러
   const valuesInHundredMillion = values.map(v => +(v / 100000).toFixed(1));
 
+  // Y축 최솟값: 데이터 최솟값에서 범위의 20%만큼 여유를 두어 모든 막대가 보이도록 함
+  const minVal = Math.min(...valuesInHundredMillion);
+  const maxVal = Math.max(...valuesInHundredMillion);
+  const padding = Math.max((maxVal - minVal) * 0.3, maxVal * 0.02);
+  const yMin = Math.max(0, minVal - padding);
+
   const chart = new Chart(canvas, {
     type: 'bar',
     data: {
@@ -88,7 +94,7 @@ function createAUMChart(canvasId, labels, values) {
           },
         },
         y: {
-          beginAtZero: false,
+          min: yMin,
           grid: { color: 'rgba(17,45,78,0.06)' },
           ticks: {
             font: { family: "'Inter', sans-serif", size: 11 },
