@@ -67,12 +67,28 @@ def _get(session: requests.Session, url: str, **kwargs) -> requests.Response:
 
 def get_latest_periods(session: requests.Session, n: int = 2) -> list[str]:
     """
-    EDGAR 검색 API로 13F-HR 제출의 최근 n개 분기(period)를 반환한다.
+    최근 n개 13F 보고 분기를 반환한다.
+    방법1: EFTS 검색 API → 방법2(fallback): 뱅가드 submissions API
     반환 형식: ["2025-09-30", "2025-06-30"] (최신 → 오래된 순)
     """
+    # 방법1: EFTS 검색 API
+    try:
+        periods = _get_periods_from_efts(session, n)
+        if periods:
+            return periods
+        print('  EFTS 결과 없음, submissions API로 재시도...', file=sys.stderr)
+    except Exception as e:
+        print(f'  [경고] EFTS 조회 실패: {e} → submissions API로 재시도...', file=sys.stderr)
+
+    # 방법2: 뱅가드(VANGUARD) submissions API (안정적 fallback)
+    return _get_periods_from_submissions(session, n)
+
+
+def _get_periods_from_efts(session: requests.Session, n: int) -> list[str]:
+    """EFTS 검색 API로 최근 13F 분기를 조회한다."""
     url = f'{EFTS_BASE}/LATEST/search-index'
     params = {
-        'q':     '"13F-HR"',
+        'q':     '13F-HR',      # 따옴표 없이 검색
         'forms': '13F-HR',
         'dateRange': 'custom',
         'startdt': '2024-01-01',
@@ -84,17 +100,48 @@ def get_latest_periods(session: requests.Session, n: int = 2) -> list[str]:
     resp = _get(session, url, params=params)
     data = resp.json()
 
-    # period_of_report 필드에서 고유 분기 추출
     periods = set()
     hits = data.get('hits', {}).get('hits', [])
     for hit in hits:
-        period = hit.get('_source', {}).get('period_of_report', '')
+        src = hit.get('_source', {})
+        # 가능한 필드명 모두 시도
+        period = (src.get('period_of_report')
+                  or src.get('periodOfReport')
+                  or src.get('period'))
         if period:
             periods.add(period)
 
-    # 내림차순 정렬하여 최신 n개 반환
-    sorted_periods = sorted(periods, reverse=True)
-    return sorted_periods[:n]
+    return sorted(periods, reverse=True)[:n]
+
+
+def _get_periods_from_submissions(session: requests.Session, n: int) -> list[str]:
+    """
+    뱅가드의 submissions API로 최근 13F 분기를 조회한다.
+    EFTS가 실패할 때 사용하는 안정적인 fallback.
+    """
+    PROBE_CIK = '0000102909'  # VANGUARD GROUP INC
+    url = f'{EDGAR_BASE}/submissions/CIK{PROBE_CIK}.json'
+
+    resp = _get(session, url)
+    data = resp.json()
+
+    recent     = data.get('filings', {}).get('recent', {})
+    form_types = recent.get('form', [])
+    # 분기 종료일 필드명 후보
+    period_dates = (recent.get('reportDate')
+                    or recent.get('periodOfReport')
+                    or [])
+
+    periods = []
+    seen    = set()
+    for form, period in zip(form_types, period_dates):
+        if form == '13F-HR' and period and period not in seen:
+            seen.add(period)
+            periods.append(period)
+        if len(periods) >= n:
+            break
+
+    return periods
 
 
 def discover_filers_for_period(session: requests.Session, period: str) -> list[dict]:
@@ -113,7 +160,7 @@ def discover_filers_for_period(session: requests.Session, period: str) -> list[d
 
     for offset in range(0, max_results, page_size):
         params = {
-            'q':     f'"13F-HR"',
+            'q':     '13F-HR',
             'forms': '13F-HR',
             'dateRange': 'custom',
             'startdt': _period_to_filing_window_start(period),
@@ -138,12 +185,18 @@ def discover_filers_for_period(session: requests.Session, period: str) -> list[d
             cik = src.get('ciks', [''])[0] if src.get('ciks') else ''
             adsh = src.get('adsh', '')
             name = src.get('display_names', [''])[0] if src.get('display_names') else ''
+            # 검색 결과에서 제출일 추출 (별도 API 호출 불필요)
+            filed_date = (src.get('file_date')
+                          or src.get('filed_at')
+                          or src.get('filing_date')
+                          or '')
 
             if cik and adsh:
                 filers.append({
-                    'cik':  cik.lstrip('0').zfill(10),  # 10자리 zero-padded
-                    'adsh': adsh,
-                    'name': name,
+                    'cik':        cik.lstrip('0').zfill(10),
+                    'adsh':       adsh,
+                    'name':       name,
+                    'filed_date': filed_date,
                 })
 
         if len(hits) < page_size:
@@ -319,7 +372,15 @@ def get_holdings_for_filer(session: requests.Session, cik: str, adsh: str,
 
     try:
         resp = _get(session, holdings_url)
-        root = ET.fromstring(resp.content)
+        content = resp.content
+        try:
+            root = ET.fromstring(content)
+        except ET.ParseError:
+            # 불규칙한 XML은 lxml의 recover 모드로 재시도
+            from lxml import etree as lxml_et
+            root_lxml = lxml_et.fromstring(content, lxml_et.XMLParser(recover=True))
+            # lxml 파싱 결과를 문자열로 변환 후 표준 라이브러리로 재파싱
+            root = ET.fromstring(lxml_et.tostring(root_lxml))
     except Exception as e:
         print(f'  [경고] holdings XML 파싱 실패 ({cik}): {e}', file=sys.stderr)
         return []
@@ -427,14 +488,14 @@ def fetch_all(session: requests.Session, periods: list[str]) -> dict:
                 session, filer['cik'], filer['adsh'], ticker_map
             )
 
-            # 제출일 조회 (submissions API에서)
-            filed_date = _get_filed_date(session, filer['cik'], filer['adsh'])
+            # 제출일: 검색 결과에서 가져오거나 분기 종료일로 대체
+            filed_date = filer.get('filed_date') or period
 
             period_result[filer['cik']] = {
-                'name_en':   filer['name'],
-                'filed_date': filed_date or period,
-                'total_aum': filer['aum'],
-                'holdings':  holdings,
+                'name_en':    filer['name'],
+                'filed_date': filed_date,
+                'total_aum':  filer['aum'],
+                'holdings':   holdings,
             }
 
         print(f'\n  → {period} 수집 완료', file=sys.stderr)
