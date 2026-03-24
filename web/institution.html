@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>기관 분석 — 13Sight</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- 고정 헤더 -->
+<header class="site-header">
+  <a href="index.html" class="logo">13Sight</a>
+  <form class="header-search" action="search.html" method="GET" role="search">
+    <input
+      type="text"
+      name="q"
+      id="header-search-input"
+      placeholder="기관명 또는 CIK 번호로 검색"
+      autocomplete="off"
+      aria-label="기관 검색"
+    />
+    <button type="submit" aria-label="검색">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="7"/>
+        <line x1="17.5" y1="17.5" x2="23" y2="23"/>
+      </svg>
+    </button>
+  </form>
+</header>
+
+<!-- 로딩 스피너 (초기 표시) -->
+<div id="loading" class="loading-spinner" style="min-height:calc(100vh - 60px)">
+  <div class="spinner"></div>
+  <span>데이터 로딩 중...</span>
+</div>
+
+<!-- 에러 영역 (숨김) -->
+<div id="error-area" style="display:none" class="inst-page">
+  <div class="error-box">
+    <h3>기관 정보를 불러올 수 없습니다</h3>
+    <p id="error-msg"></p>
+  </div>
+</div>
+
+<!-- 메인 콘텐츠 (데이터 로드 후 표시) -->
+<main id="inst-content" class="inst-page" style="display:none">
+
+  <!-- ── 기관 기본 정보 헤더 ──────────────────────────────── -->
+  <div class="inst-header-card">
+    <div id="inst-name-en"  class="inst-name-en"></div>
+    <div id="inst-name-ko"  class="inst-name-ko"></div>
+    <div class="inst-meta">
+      <div class="inst-meta-item">
+        <div class="inst-meta-label">총 AUM</div>
+        <div id="inst-aum" class="inst-meta-value"></div>
+      </div>
+      <div class="inst-meta-item">
+        <div class="inst-meta-label">최신 보고 기간</div>
+        <div id="inst-period" class="inst-meta-value"></div>
+      </div>
+      <div class="inst-meta-item">
+        <div class="inst-meta-label">제출일</div>
+        <div id="inst-filed-date" class="inst-meta-value"></div>
+      </div>
+      <div class="inst-meta-item">
+        <div class="inst-meta-label">CIK</div>
+        <div id="inst-cik" class="inst-meta-value" style="font-size:0.95rem; font-family:monospace;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 섹션 1: AUM 추이 차트 ───────────────────────────── -->
+  <div class="section">
+    <h2 class="section-title">AUM 추이</h2>
+    <div class="chart-container">
+      <canvas id="aum-chart"></canvas>
+    </div>
+  </div>
+
+  <!-- ── 섹션 2: 섹터 배분 ────────────────────────────────── -->
+  <div class="section" id="sector-section">
+    <h2 class="section-title">섹터 배분</h2>
+    <div class="donut-charts-row">
+      <div class="donut-chart-wrap">
+        <div id="prev-donut-title" class="donut-chart-title"></div>
+        <div class="donut-container">
+          <canvas id="prev-sector-chart"></canvas>
+        </div>
+      </div>
+      <div class="donut-chart-wrap">
+        <div id="curr-donut-title" class="donut-chart-title"></div>
+        <div class="donut-container">
+          <canvas id="curr-sector-chart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 섹션 3: 분기 간 변화 ─────────────────────────────── -->
+  <div class="section" id="changes-section">
+    <h2 class="section-title">분기 간 변화</h2>
+
+    <div class="tab-nav" role="tablist">
+      <button class="tab-btn active" role="tab" data-tab="new-buys"     aria-selected="true">신규 매수</button>
+      <button class="tab-btn"        role="tab" data-tab="full-sells"   aria-selected="false">완전 매도</button>
+      <button class="tab-btn"        role="tab" data-tab="weight-up"    aria-selected="false">비중 증가 Top 10</button>
+      <button class="tab-btn"        role="tab" data-tab="weight-down"  aria-selected="false">비중 감소 Top 10</button>
+    </div>
+
+    <div id="tab-new-buys"   class="tab-pane active"></div>
+    <div id="tab-full-sells" class="tab-pane"></div>
+    <div id="tab-weight-up"  class="tab-pane"></div>
+    <div id="tab-weight-down"class="tab-pane"></div>
+  </div>
+
+  <!-- ── 섹션 4: 보유 종목 전체 ───────────────────────────── -->
+  <div class="section">
+    <h2 class="section-title">보유 종목 전체</h2>
+    <div class="table-wrap">
+      <table id="holdings-table">
+        <thead>
+          <tr>
+            <th class="td-rank">#</th>
+            <th class="sortable" data-col="name">종목명</th>
+            <th class="sortable" data-col="ticker">티커</th>
+            <th class="sortable" data-col="shares">보유 주수</th>
+            <th class="sortable" data-col="value" aria-sort="descending">평가금액 ▼</th>
+            <th class="sortable" data-col="weight_pct">비중(%)</th>
+            <th>전분기 대비</th>
+          </tr>
+        </thead>
+        <tbody id="holdings-tbody"></tbody>
+      </table>
+    </div>
+    <div id="pagination" class="pagination"></div>
+  </div>
+
+</main>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<!-- 차트 팩토리 -->
+<script src="js/charts.js"></script>
+<!-- 기관 분석 페이지 로직 -->
+<script src="js/institution.js"></script>
+</body>
+</html>

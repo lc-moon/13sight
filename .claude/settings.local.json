@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import json; d=json.load\\(open\\(''C:/Users/lcmoo/OneDrive/바탕 화면/13Sight/data/institutions.json'', encoding=''utf-8''\\)\\); print\\(''기관 수:'', len\\(d[''institutions'']\\)\\); print\\(''첫 기관:'', d[''institutions''][0][''name_en''] if d[''institutions''] else ''none''\\)\")"
+    ]
+  }
+}

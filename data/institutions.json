@@ -1,0 +1,2710 @@
+{
+  "last_updated": "2026-03-24",
+  "institutions": [
+    {
+      "cik": "0000102909",
+      "name_en": "VANGUARD GROUP INC",
+      "name_ko": "뱅가드 그룹",
+      "filings": [
+        {
+          "period": "2025-06-30",
+          "period_label": "2025 Q2",
+          "filed_date": "2025-08-14",
+          "total_aum": 7100000000,
+          "holdings": [
+            {
+              "name": "APPLE INC",
+              "ticker": "AAPL",
+              "cusip": "037833100",
+              "shares": 3262162162,
+              "value": 603500000,
+              "investment_type": "SH",
+              "weight_pct": 8.5,
+              "sector": "Technology"
+            },
+            {
+              "name": "MICROSOFT CORP",
+              "ticker": "MSFT",
+              "cusip": "594918104",
+              "shares": 1231807228,
+              "value": 511200000,
+              "investment_type": "SH",
+              "weight_pct": 7.2,
+              "sector": "Technology"
+            },
+            {
+              "name": "NVIDIA CORP",
+              "ticker": "NVDA",
+              "cusip": "67066G104",
+              "shares": 494971428,
+              "value": 433100000,
+              "investment_type": "SH",
+              "weight_pct": 6.1,
+              "sector": "Technology"
+            },
+            {
+              "name": "BROADCOM INC",
+              "ticker": "AVGO",
+              "cusip": "11135F101",
+              "shares": 215028571,
+              "value": 376300000,
+              "investment_type": "SH",
+              "weight_pct": 5.3,
+              "sector": "Technology"
+            },
+            {
+              "name": "SALESFORCE INC",
+              "ticker": "CRM",
+              "cusip": "79466L302",
+              "shares": 1099354838,
+              "value": 340800000,
+              "investment_type": "SH",
+              "weight_pct": 4.8,
+              "sector": "Technology"
+            },
+            {
+              "name": "ORACLE CORP",
+              "ticker": "ORCL",
+              "cusip": "68389X105",
+              "shares": 1790777777,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Technology"
+            },
+            {
+              "name": "AMAZON COM INC",
+              "ticker": "AMZN",
+              "cusip": "023135106",
+              "shares": 1272394736,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "TESLA INC",
+              "ticker": "TSLA",
+              "cusip": "88160R101",
+              "shares": 967020000,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "HOME DEPOT INC",
+              "ticker": "HD",
+              "cusip": "437076102",
+              "shares": 653391891,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "ALPHABET INC",
+              "ticker": "GOOGL",
+              "cusip": "02079K305",
+              "shares": 1381457142,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "META PLATFORMS INC",
+              "ticker": "META",
+              "cusip": "30303M102",
+              "shares": 443587155,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "NETFLIX INC",
+              "ticker": "NFLX",
+              "cusip": "64110L106",
+              "shares": 358155555,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "JPMORGAN CHASE & CO",
+              "ticker": "JPM",
+              "cusip": "46625H100",
+              "shares": 1179292682,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "VISA INC",
+              "ticker": "V",
+              "cusip": "92826C839",
+              "shares": 863410714,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "MASTERCARD INC",
+              "ticker": "MA",
+              "cusip": "57636Q104",
+              "shares": 493377551,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "BANK OF AMERICA CORP",
+              "ticker": "BAC",
+              "cusip": "060505104",
+              "shares": 5756071428,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "UNITEDHEALTH GROUP INC",
+              "ticker": "UNH",
+              "cusip": "91324P102",
+              "shares": 464913461,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "JOHNSON & JOHNSON",
+              "ticker": "JNJ",
+              "cusip": "478160104",
+              "shares": 1559709677,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ABBVIE INC",
+              "ticker": "ABBV",
+              "cusip": "00287Y109",
+              "shares": 1381457142,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ELI LILLY & CO",
+              "ticker": "LLY",
+              "cusip": "532457108",
+              "shares": 281110465,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "THERMO FISHER SCIENTIFIC",
+              "ticker": "TMO",
+              "cusip": "883556102",
+              "shares": 443587155,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "PFIZER INC",
+              "ticker": "PFE",
+              "cusip": "717081103",
+              "shares": 8634107142,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "EXXON MOBIL CORP",
+              "ticker": "XOM",
+              "cusip": "30231G102",
+              "shares": 2102217391,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Energy"
+            },
+            {
+              "name": "CHEVRON CORP",
+              "ticker": "CVX",
+              "cusip": "166764100",
+              "shares": 1559709677,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Energy"
+            },
+            {
+              "name": "PROCTER & GAMBLE CO",
+              "ticker": "PG",
+              "cusip": "742718109",
+              "shares": 1465181818,
+              "value": 241755000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Staples"
+            }
+          ],
+          "sector_breakdown": {
+            "Technology": 35.3,
+            "Healthcare": 20.43,
+            "Financials": 13.62,
+            "Consumer Discretionary": 10.21,
+            "Communication Services": 10.21,
+            "Energy": 6.81,
+            "Consumer Staples": 3.4
+          }
+        },
+        {
+          "period": "2025-09-30",
+          "period_label": "2025 Q3",
+          "filed_date": "2025-11-14",
+          "total_aum": 7400000000,
+          "holdings": [
+            {
+              "name": "APPLE INC",
+              "ticker": "AAPL",
+              "cusip": "037833100",
+              "shares": 3824662221,
+              "value": 707562511,
+              "investment_type": "SH",
+              "weight_pct": 9.56,
+              "sector": "Technology"
+            },
+            {
+              "name": "MICROSOFT CORP",
+              "ticker": "MSFT",
+              "cusip": "594918104",
+              "shares": 1444209802,
+              "value": 599347068,
+              "investment_type": "SH",
+              "weight_pct": 8.1,
+              "sector": "Technology"
+            },
+            {
+              "name": "NVIDIA CORP",
+              "ticker": "NVDA",
+              "cusip": "67066G104",
+              "shares": 580320177,
+              "value": 507780155,
+              "investment_type": "SH",
+              "weight_pct": 6.86,
+              "sector": "Technology"
+            },
+            {
+              "name": "BROADCOM INC",
+              "ticker": "AVGO",
+              "cusip": "11135F101",
+              "shares": 252106306,
+              "value": 441186036,
+              "investment_type": "SH",
+              "weight_pct": 5.96,
+              "sector": "Technology"
+            },
+            {
+              "name": "SALESFORCE INC",
+              "ticker": "CRM",
+              "cusip": "79466L302",
+              "shares": 1288918425,
+              "value": 399564712,
+              "investment_type": "SH",
+              "weight_pct": 5.4,
+              "sector": "Technology"
+            },
+            {
+              "name": "COSTCO WHOLESALE",
+              "ticker": "COST",
+              "cusip": "22160K105",
+              "shares": 315987979,
+              "value": 246470624,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "JPMORGAN CHASE & CO",
+              "ticker": "JPM",
+              "cusip": "46625H100",
+              "shares": 1202295726,
+              "value": 246470624,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "VISA INC",
+              "ticker": "V",
+              "cusip": "92826C839",
+              "shares": 880252228,
+              "value": 246470624,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "MASTERCARD INC",
+              "ticker": "MA",
+              "cusip": "57636Q104",
+              "shares": 503001273,
+              "value": 246470624,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "BANK OF AMERICA CORP",
+              "ticker": "BAC",
+              "cusip": "060505104",
+              "shares": 5868348190,
+              "value": 246470624,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "BERKSHIRE HATHAWAY CL B",
+              "ticker": "BRK.B",
+              "cusip": "084670702",
+              "shares": 666136821,
+              "value": 246470624,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "UNITEDHEALTH GROUP INC",
+              "ticker": "UNH",
+              "cusip": "91324P102",
+              "shares": 473981969,
+              "value": 246470624,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "JOHNSON & JOHNSON",
+              "ticker": "JNJ",
+              "cusip": "478160104",
+              "shares": 1590133058,
+              "value": 246470624,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ABBVIE INC",
+              "ticker": "ABBV",
+              "cusip": "00287Y109",
+              "shares": 1408403565,
+              "value": 246470624,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ELI LILLY & CO",
+              "ticker": "LLY",
+              "cusip": "532457108",
+              "shares": 286593748,
+              "value": 246470624,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "THERMO FISHER SCIENTIFIC",
+              "ticker": "TMO",
+              "cusip": "883556102",
+              "shares": 452239677,
+              "value": 246470624,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "EXXON MOBIL CORP",
+              "ticker": "XOM",
+              "cusip": "30231G102",
+              "shares": 2143222817,
+              "value": 246470624,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Energy"
+            },
+            {
+              "name": "CHEVRON CORP",
+              "ticker": "CVX",
+              "cusip": "166764100",
+              "shares": 1590133058,
+              "value": 246470624,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Energy"
+            },
+            {
+              "name": "PROCTER & GAMBLE CO",
+              "ticker": "PG",
+              "cusip": "742718109",
+              "shares": 1493761357,
+              "value": 246470624,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Consumer Staples"
+            },
+            {
+              "name": "WALMART INC",
+              "ticker": "WMT",
+              "cusip": "931142103",
+              "shares": 2594427621,
+              "value": 246470624,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Consumer Staples"
+            },
+            {
+              "name": "AMAZON COM INC",
+              "ticker": "AMZN",
+              "cusip": "023135106",
+              "shares": 1102631736,
+              "value": 209500030,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "TESLA INC",
+              "ticker": "TSLA",
+              "cusip": "88160R101",
+              "shares": 838000120,
+              "value": 209500030,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "HOME DEPOT INC",
+              "ticker": "HD",
+              "cusip": "437076102",
+              "shares": 566216297,
+              "value": 209500030,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "ALPHABET INC",
+              "ticker": "GOOGL",
+              "cusip": "02079K305",
+              "shares": 1197143028,
+              "value": 209500030,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "META PLATFORMS INC",
+              "ticker": "META",
+              "cusip": "30303M102",
+              "shares": 384403724,
+              "value": 209500030,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Communication Services"
+            }
+          ],
+          "sector_breakdown": {
+            "Technology": 35.88,
+            "Financials": 16.65,
+            "Healthcare": 16.65,
+            "Consumer Discretionary": 11.82,
+            "Energy": 6.66,
+            "Consumer Staples": 6.66,
+            "Communication Services": 5.66
+          }
+        }
+      ]
+    },
+    {
+      "cik": "0001364742",
+      "name_en": "BlackRock, Inc.",
+      "name_ko": "블랙록",
+      "filings": [
+        {
+          "period": "2025-06-30",
+          "period_label": "2025 Q2",
+          "filed_date": "2025-08-14",
+          "total_aum": 5800000000,
+          "holdings": [
+            {
+              "name": "APPLE INC",
+              "ticker": "AAPL",
+              "cusip": "037833100",
+              "shares": 2664864864,
+              "value": 493000000,
+              "investment_type": "SH",
+              "weight_pct": 8.5,
+              "sector": "Technology"
+            },
+            {
+              "name": "MICROSOFT CORP",
+              "ticker": "MSFT",
+              "cusip": "594918104",
+              "shares": 1006265060,
+              "value": 417600000,
+              "investment_type": "SH",
+              "weight_pct": 7.2,
+              "sector": "Technology"
+            },
+            {
+              "name": "NVIDIA CORP",
+              "ticker": "NVDA",
+              "cusip": "67066G104",
+              "shares": 404342857,
+              "value": 353800000,
+              "investment_type": "SH",
+              "weight_pct": 6.1,
+              "sector": "Technology"
+            },
+            {
+              "name": "BROADCOM INC",
+              "ticker": "AVGO",
+              "cusip": "11135F101",
+              "shares": 175657142,
+              "value": 307400000,
+              "investment_type": "SH",
+              "weight_pct": 5.3,
+              "sector": "Technology"
+            },
+            {
+              "name": "SALESFORCE INC",
+              "ticker": "CRM",
+              "cusip": "79466L302",
+              "shares": 898064516,
+              "value": 278400000,
+              "investment_type": "SH",
+              "weight_pct": 4.8,
+              "sector": "Technology"
+            },
+            {
+              "name": "ORACLE CORP",
+              "ticker": "ORCL",
+              "cusip": "68389X105",
+              "shares": 1462888888,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Technology"
+            },
+            {
+              "name": "AMAZON COM INC",
+              "ticker": "AMZN",
+              "cusip": "023135106",
+              "shares": 1039421052,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "TESLA INC",
+              "ticker": "TSLA",
+              "cusip": "88160R101",
+              "shares": 789960000,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "HOME DEPOT INC",
+              "ticker": "HD",
+              "cusip": "437076102",
+              "shares": 533756756,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "ALPHABET INC",
+              "ticker": "GOOGL",
+              "cusip": "02079K305",
+              "shares": 1128514285,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "META PLATFORMS INC",
+              "ticker": "META",
+              "cusip": "30303M102",
+              "shares": 362366972,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "NETFLIX INC",
+              "ticker": "NFLX",
+              "cusip": "64110L106",
+              "shares": 292577777,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "JPMORGAN CHASE & CO",
+              "ticker": "JPM",
+              "cusip": "46625H100",
+              "shares": 963365853,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "VISA INC",
+              "ticker": "V",
+              "cusip": "92826C839",
+              "shares": 705321428,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "MASTERCARD INC",
+              "ticker": "MA",
+              "cusip": "57636Q104",
+              "shares": 403040816,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "BANK OF AMERICA CORP",
+              "ticker": "BAC",
+              "cusip": "060505104",
+              "shares": 4702142857,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "UNITEDHEALTH GROUP INC",
+              "ticker": "UNH",
+              "cusip": "91324P102",
+              "shares": 379788461,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "JOHNSON & JOHNSON",
+              "ticker": "JNJ",
+              "cusip": "478160104",
+              "shares": 1274129032,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ABBVIE INC",
+              "ticker": "ABBV",
+              "cusip": "00287Y109",
+              "shares": 1128514285,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ELI LILLY & CO",
+              "ticker": "LLY",
+              "cusip": "532457108",
+              "shares": 229639534,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "THERMO FISHER SCIENTIFIC",
+              "ticker": "TMO",
+              "cusip": "883556102",
+              "shares": 362366972,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "PFIZER INC",
+              "ticker": "PFE",
+              "cusip": "717081103",
+              "shares": 7053214285,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "EXXON MOBIL CORP",
+              "ticker": "XOM",
+              "cusip": "30231G102",
+              "shares": 1717304347,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Energy"
+            },
+            {
+              "name": "CHEVRON CORP",
+              "ticker": "CVX",
+              "cusip": "166764100",
+              "shares": 1274129032,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Energy"
+            },
+            {
+              "name": "PROCTER & GAMBLE CO",
+              "ticker": "PG",
+              "cusip": "742718109",
+              "shares": 1196909090,
+              "value": 197490000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Staples"
+            }
+          ],
+          "sector_breakdown": {
+            "Technology": 35.3,
+            "Healthcare": 20.43,
+            "Financials": 13.62,
+            "Consumer Discretionary": 10.21,
+            "Communication Services": 10.21,
+            "Energy": 6.81,
+            "Consumer Staples": 3.4
+          }
+        },
+        {
+          "period": "2025-09-30",
+          "period_label": "2025 Q3",
+          "filed_date": "2025-11-14",
+          "total_aum": 6100000000,
+          "holdings": [
+            {
+              "name": "APPLE INC",
+              "ticker": "AAPL",
+              "cusip": "037833100",
+              "shares": 3152762102,
+              "value": 583260989,
+              "investment_type": "SH",
+              "weight_pct": 9.56,
+              "sector": "Technology"
+            },
+            {
+              "name": "MICROSOFT CORP",
+              "ticker": "MSFT",
+              "cusip": "594918104",
+              "shares": 1190497269,
+              "value": 494056367,
+              "investment_type": "SH",
+              "weight_pct": 8.1,
+              "sector": "Technology"
+            },
+            {
+              "name": "NVIDIA CORP",
+              "ticker": "NVDA",
+              "cusip": "67066G104",
+              "shares": 478372037,
+              "value": 418575533,
+              "investment_type": "SH",
+              "weight_pct": 6.86,
+              "sector": "Technology"
+            },
+            {
+              "name": "BROADCOM INC",
+              "ticker": "AVGO",
+              "cusip": "11135F101",
+              "shares": 207817360,
+              "value": 363680381,
+              "investment_type": "SH",
+              "weight_pct": 5.96,
+              "sector": "Technology"
+            },
+            {
+              "name": "SALESFORCE INC",
+              "ticker": "CRM",
+              "cusip": "79466L302",
+              "shares": 1062486809,
+              "value": 329370911,
+              "investment_type": "SH",
+              "weight_pct": 5.4,
+              "sector": "Technology"
+            },
+            {
+              "name": "COSTCO WHOLESALE",
+              "ticker": "COST",
+              "cusip": "22160K105",
+              "shares": 260476576,
+              "value": 203171730,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "JPMORGAN CHASE & CO",
+              "ticker": "JPM",
+              "cusip": "46625H100",
+              "shares": 991081609,
+              "value": 203171730,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "VISA INC",
+              "ticker": "V",
+              "cusip": "92826C839",
+              "shares": 725613321,
+              "value": 203171730,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "MASTERCARD INC",
+              "ticker": "MA",
+              "cusip": "57636Q104",
+              "shares": 414636183,
+              "value": 203171730,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "BANK OF AMERICA CORP",
+              "ticker": "BAC",
+              "cusip": "060505104",
+              "shares": 4837422142,
+              "value": 203171730,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "BERKSHIRE HATHAWAY CL B",
+              "ticker": "BRK.B",
+              "cusip": "084670702",
+              "shares": 549112783,
+              "value": 203171730,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "UNITEDHEALTH GROUP INC",
+              "ticker": "UNH",
+              "cusip": "91324P102",
+              "shares": 390714865,
+              "value": 203171730,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "JOHNSON & JOHNSON",
+              "ticker": "JNJ",
+              "cusip": "478160104",
+              "shares": 1310785354,
+              "value": 203171730,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ABBVIE INC",
+              "ticker": "ABBV",
+              "cusip": "00287Y109",
+              "shares": 1160981314,
+              "value": 203171730,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ELI LILLY & CO",
+              "ticker": "LLY",
+              "cusip": "532457108",
+              "shares": 236246197,
+              "value": 203171730,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "THERMO FISHER SCIENTIFIC",
+              "ticker": "TMO",
+              "cusip": "883556102",
+              "shares": 372792165,
+              "value": 203171730,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "EXXON MOBIL CORP",
+              "ticker": "XOM",
+              "cusip": "30231G102",
+              "shares": 1766710695,
+              "value": 203171730,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Energy"
+            },
+            {
+              "name": "CHEVRON CORP",
+              "ticker": "CVX",
+              "cusip": "166764100",
+              "shares": 1310785354,
+              "value": 203171730,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Energy"
+            },
+            {
+              "name": "PROCTER & GAMBLE CO",
+              "ticker": "PG",
+              "cusip": "742718109",
+              "shares": 1231343818,
+              "value": 203171730,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Consumer Staples"
+            },
+            {
+              "name": "WALMART INC",
+              "ticker": "WMT",
+              "cusip": "931142103",
+              "shares": 2138649789,
+              "value": 203171730,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Consumer Staples"
+            },
+            {
+              "name": "AMAZON COM INC",
+              "ticker": "AMZN",
+              "cusip": "023135106",
+              "shares": 908926163,
+              "value": 172695971,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "TESLA INC",
+              "ticker": "TSLA",
+              "cusip": "88160R101",
+              "shares": 690783884,
+              "value": 172695971,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "HOME DEPOT INC",
+              "ticker": "HD",
+              "cusip": "437076102",
+              "shares": 466745867,
+              "value": 172695971,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "ALPHABET INC",
+              "ticker": "GOOGL",
+              "cusip": "02079K305",
+              "shares": 986834120,
+              "value": 172695971,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "META PLATFORMS INC",
+              "ticker": "META",
+              "cusip": "30303M102",
+              "shares": 316873341,
+              "value": 172695971,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Communication Services"
+            }
+          ],
+          "sector_breakdown": {
+            "Technology": 35.88,
+            "Financials": 16.65,
+            "Healthcare": 16.65,
+            "Consumer Discretionary": 11.82,
+            "Energy": 6.66,
+            "Consumer Staples": 6.66,
+            "Communication Services": 5.66
+          }
+        }
+      ]
+    },
+    {
+      "cik": "0000093751",
+      "name_en": "STATE STREET CORP",
+      "name_ko": "스테이트 스트리트",
+      "filings": [
+        {
+          "period": "2025-06-30",
+          "period_label": "2025 Q2",
+          "filed_date": "2025-08-14",
+          "total_aum": 3500000000,
+          "holdings": [
+            {
+              "name": "APPLE INC",
+              "ticker": "AAPL",
+              "cusip": "037833100",
+              "shares": 1608108108,
+              "value": 297500000,
+              "investment_type": "SH",
+              "weight_pct": 8.5,
+              "sector": "Technology"
+            },
+            {
+              "name": "MICROSOFT CORP",
+              "ticker": "MSFT",
+              "cusip": "594918104",
+              "shares": 607228915,
+              "value": 252000000,
+              "investment_type": "SH",
+              "weight_pct": 7.2,
+              "sector": "Technology"
+            },
+            {
+              "name": "NVIDIA CORP",
+              "ticker": "NVDA",
+              "cusip": "67066G104",
+              "shares": 244000000,
+              "value": 213500000,
+              "investment_type": "SH",
+              "weight_pct": 6.1,
+              "sector": "Technology"
+            },
+            {
+              "name": "BROADCOM INC",
+              "ticker": "AVGO",
+              "cusip": "11135F101",
+              "shares": 106000000,
+              "value": 185500000,
+              "investment_type": "SH",
+              "weight_pct": 5.3,
+              "sector": "Technology"
+            },
+            {
+              "name": "SALESFORCE INC",
+              "ticker": "CRM",
+              "cusip": "79466L302",
+              "shares": 541935483,
+              "value": 168000000,
+              "investment_type": "SH",
+              "weight_pct": 4.8,
+              "sector": "Technology"
+            },
+            {
+              "name": "ORACLE CORP",
+              "ticker": "ORCL",
+              "cusip": "68389X105",
+              "shares": 882777777,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Technology"
+            },
+            {
+              "name": "AMAZON COM INC",
+              "ticker": "AMZN",
+              "cusip": "023135106",
+              "shares": 627236842,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "TESLA INC",
+              "ticker": "TSLA",
+              "cusip": "88160R101",
+              "shares": 476700000,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "HOME DEPOT INC",
+              "ticker": "HD",
+              "cusip": "437076102",
+              "shares": 322094594,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "ALPHABET INC",
+              "ticker": "GOOGL",
+              "cusip": "02079K305",
+              "shares": 681000000,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "META PLATFORMS INC",
+              "ticker": "META",
+              "cusip": "30303M102",
+              "shares": 218669724,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "NETFLIX INC",
+              "ticker": "NFLX",
+              "cusip": "64110L106",
+              "shares": 176555555,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "JPMORGAN CHASE & CO",
+              "ticker": "JPM",
+              "cusip": "46625H100",
+              "shares": 581341463,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "VISA INC",
+              "ticker": "V",
+              "cusip": "92826C839",
+              "shares": 425625000,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "MASTERCARD INC",
+              "ticker": "MA",
+              "cusip": "57636Q104",
+              "shares": 243214285,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "BANK OF AMERICA CORP",
+              "ticker": "BAC",
+              "cusip": "060505104",
+              "shares": 2837500000,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "UNITEDHEALTH GROUP INC",
+              "ticker": "UNH",
+              "cusip": "91324P102",
+              "shares": 229182692,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "JOHNSON & JOHNSON",
+              "ticker": "JNJ",
+              "cusip": "478160104",
+              "shares": 768870967,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ABBVIE INC",
+              "ticker": "ABBV",
+              "cusip": "00287Y109",
+              "shares": 681000000,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ELI LILLY & CO",
+              "ticker": "LLY",
+              "cusip": "532457108",
+              "shares": 138575581,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "THERMO FISHER SCIENTIFIC",
+              "ticker": "TMO",
+              "cusip": "883556102",
+              "shares": 218669724,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "PFIZER INC",
+              "ticker": "PFE",
+              "cusip": "717081103",
+              "shares": 4256250000,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "EXXON MOBIL CORP",
+              "ticker": "XOM",
+              "cusip": "30231G102",
+              "shares": 1036304347,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Energy"
+            },
+            {
+              "name": "CHEVRON CORP",
+              "ticker": "CVX",
+              "cusip": "166764100",
+              "shares": 768870967,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Energy"
+            },
+            {
+              "name": "PROCTER & GAMBLE CO",
+              "ticker": "PG",
+              "cusip": "742718109",
+              "shares": 722272727,
+              "value": 119175000,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Staples"
+            }
+          ],
+          "sector_breakdown": {
+            "Technology": 35.3,
+            "Healthcare": 20.43,
+            "Financials": 13.62,
+            "Consumer Discretionary": 10.21,
+            "Communication Services": 10.21,
+            "Energy": 6.81,
+            "Consumer Staples": 3.4
+          }
+        },
+        {
+          "period": "2025-09-30",
+          "period_label": "2025 Q3",
+          "filed_date": "2025-11-14",
+          "total_aum": 3700000000,
+          "holdings": [
+            {
+              "name": "APPLE INC",
+              "ticker": "AAPL",
+              "cusip": "037833100",
+              "shares": 1912331108,
+              "value": 353781255,
+              "investment_type": "SH",
+              "weight_pct": 9.56,
+              "sector": "Technology"
+            },
+            {
+              "name": "MICROSOFT CORP",
+              "ticker": "MSFT",
+              "cusip": "594918104",
+              "shares": 722104901,
+              "value": 299673534,
+              "investment_type": "SH",
+              "weight_pct": 8.1,
+              "sector": "Technology"
+            },
+            {
+              "name": "NVIDIA CORP",
+              "ticker": "NVDA",
+              "cusip": "67066G104",
+              "shares": 290160088,
+              "value": 253890077,
+              "investment_type": "SH",
+              "weight_pct": 6.86,
+              "sector": "Technology"
+            },
+            {
+              "name": "BROADCOM INC",
+              "ticker": "AVGO",
+              "cusip": "11135F101",
+              "shares": 126053153,
+              "value": 220593018,
+              "investment_type": "SH",
+              "weight_pct": 5.96,
+              "sector": "Technology"
+            },
+            {
+              "name": "SALESFORCE INC",
+              "ticker": "CRM",
+              "cusip": "79466L302",
+              "shares": 644459212,
+              "value": 199782356,
+              "investment_type": "SH",
+              "weight_pct": 5.4,
+              "sector": "Technology"
+            },
+            {
+              "name": "COSTCO WHOLESALE",
+              "ticker": "COST",
+              "cusip": "22160K105",
+              "shares": 157993989,
+              "value": 123235312,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "JPMORGAN CHASE & CO",
+              "ticker": "JPM",
+              "cusip": "46625H100",
+              "shares": 601147863,
+              "value": 123235312,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "VISA INC",
+              "ticker": "V",
+              "cusip": "92826C839",
+              "shares": 440126114,
+              "value": 123235312,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "MASTERCARD INC",
+              "ticker": "MA",
+              "cusip": "57636Q104",
+              "shares": 251500636,
+              "value": 123235312,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "BANK OF AMERICA CORP",
+              "ticker": "BAC",
+              "cusip": "060505104",
+              "shares": 2934174095,
+              "value": 123235312,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "BERKSHIRE HATHAWAY CL B",
+              "ticker": "BRK.B",
+              "cusip": "084670702",
+              "shares": 333068410,
+              "value": 123235312,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "UNITEDHEALTH GROUP INC",
+              "ticker": "UNH",
+              "cusip": "91324P102",
+              "shares": 236990984,
+              "value": 123235312,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "JOHNSON & JOHNSON",
+              "ticker": "JNJ",
+              "cusip": "478160104",
+              "shares": 795066529,
+              "value": 123235312,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ABBVIE INC",
+              "ticker": "ABBV",
+              "cusip": "00287Y109",
+              "shares": 704201782,
+              "value": 123235312,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ELI LILLY & CO",
+              "ticker": "LLY",
+              "cusip": "532457108",
+              "shares": 143296874,
+              "value": 123235312,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "THERMO FISHER SCIENTIFIC",
+              "ticker": "TMO",
+              "cusip": "883556102",
+              "shares": 226119838,
+              "value": 123235312,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "EXXON MOBIL CORP",
+              "ticker": "XOM",
+              "cusip": "30231G102",
+              "shares": 1071611408,
+              "value": 123235312,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Energy"
+            },
+            {
+              "name": "CHEVRON CORP",
+              "ticker": "CVX",
+              "cusip": "166764100",
+              "shares": 795066529,
+              "value": 123235312,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Energy"
+            },
+            {
+              "name": "PROCTER & GAMBLE CO",
+              "ticker": "PG",
+              "cusip": "742718109",
+              "shares": 746880678,
+              "value": 123235312,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Consumer Staples"
+            },
+            {
+              "name": "WALMART INC",
+              "ticker": "WMT",
+              "cusip": "931142103",
+              "shares": 1297213810,
+              "value": 123235312,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Consumer Staples"
+            },
+            {
+              "name": "AMAZON COM INC",
+              "ticker": "AMZN",
+              "cusip": "023135106",
+              "shares": 551315868,
+              "value": 104750015,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "TESLA INC",
+              "ticker": "TSLA",
+              "cusip": "88160R101",
+              "shares": 419000060,
+              "value": 104750015,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "HOME DEPOT INC",
+              "ticker": "HD",
+              "cusip": "437076102",
+              "shares": 283108148,
+              "value": 104750015,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "ALPHABET INC",
+              "ticker": "GOOGL",
+              "cusip": "02079K305",
+              "shares": 598571514,
+              "value": 104750015,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "META PLATFORMS INC",
+              "ticker": "META",
+              "cusip": "30303M102",
+              "shares": 192201862,
+              "value": 104750015,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Communication Services"
+            }
+          ],
+          "sector_breakdown": {
+            "Technology": 35.88,
+            "Financials": 16.65,
+            "Healthcare": 16.65,
+            "Consumer Discretionary": 11.82,
+            "Energy": 6.66,
+            "Consumer Staples": 6.66,
+            "Communication Services": 5.66
+          }
+        }
+      ]
+    },
+    {
+      "cik": "0000884546",
+      "name_en": "CHARLES SCHWAB INVESTMENT MANAGEMENT",
+      "name_ko": "찰스 슈왑 자산운용",
+      "filings": [
+        {
+          "period": "2025-06-30",
+          "period_label": "2025 Q2",
+          "filed_date": "2025-08-14",
+          "total_aum": 450000000,
+          "holdings": [
+            {
+              "name": "APPLE INC",
+              "ticker": "AAPL",
+              "cusip": "037833100",
+              "shares": 206756756,
+              "value": 38250000,
+              "investment_type": "SH",
+              "weight_pct": 8.5,
+              "sector": "Technology"
+            },
+            {
+              "name": "MICROSOFT CORP",
+              "ticker": "MSFT",
+              "cusip": "594918104",
+              "shares": 78072289,
+              "value": 32400000,
+              "investment_type": "SH",
+              "weight_pct": 7.2,
+              "sector": "Technology"
+            },
+            {
+              "name": "NVIDIA CORP",
+              "ticker": "NVDA",
+              "cusip": "67066G104",
+              "shares": 31371428,
+              "value": 27450000,
+              "investment_type": "SH",
+              "weight_pct": 6.1,
+              "sector": "Technology"
+            },
+            {
+              "name": "BROADCOM INC",
+              "ticker": "AVGO",
+              "cusip": "11135F101",
+              "shares": 13628571,
+              "value": 23850000,
+              "investment_type": "SH",
+              "weight_pct": 5.3,
+              "sector": "Technology"
+            },
+            {
+              "name": "SALESFORCE INC",
+              "ticker": "CRM",
+              "cusip": "79466L302",
+              "shares": 69677419,
+              "value": 21600000,
+              "investment_type": "SH",
+              "weight_pct": 4.8,
+              "sector": "Technology"
+            },
+            {
+              "name": "ORACLE CORP",
+              "ticker": "ORCL",
+              "cusip": "68389X105",
+              "shares": 113500000,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Technology"
+            },
+            {
+              "name": "AMAZON COM INC",
+              "ticker": "AMZN",
+              "cusip": "023135106",
+              "shares": 80644736,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "TESLA INC",
+              "ticker": "TSLA",
+              "cusip": "88160R101",
+              "shares": 61290000,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "HOME DEPOT INC",
+              "ticker": "HD",
+              "cusip": "437076102",
+              "shares": 41412162,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "ALPHABET INC",
+              "ticker": "GOOGL",
+              "cusip": "02079K305",
+              "shares": 87557142,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "META PLATFORMS INC",
+              "ticker": "META",
+              "cusip": "30303M102",
+              "shares": 28114678,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "NETFLIX INC",
+              "ticker": "NFLX",
+              "cusip": "64110L106",
+              "shares": 22700000,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "JPMORGAN CHASE & CO",
+              "ticker": "JPM",
+              "cusip": "46625H100",
+              "shares": 74743902,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "VISA INC",
+              "ticker": "V",
+              "cusip": "92826C839",
+              "shares": 54723214,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "MASTERCARD INC",
+              "ticker": "MA",
+              "cusip": "57636Q104",
+              "shares": 31270408,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "BANK OF AMERICA CORP",
+              "ticker": "BAC",
+              "cusip": "060505104",
+              "shares": 364821428,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "UNITEDHEALTH GROUP INC",
+              "ticker": "UNH",
+              "cusip": "91324P102",
+              "shares": 29466346,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "JOHNSON & JOHNSON",
+              "ticker": "JNJ",
+              "cusip": "478160104",
+              "shares": 98854838,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ABBVIE INC",
+              "ticker": "ABBV",
+              "cusip": "00287Y109",
+              "shares": 87557142,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ELI LILLY & CO",
+              "ticker": "LLY",
+              "cusip": "532457108",
+              "shares": 17816860,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "THERMO FISHER SCIENTIFIC",
+              "ticker": "TMO",
+              "cusip": "883556102",
+              "shares": 28114678,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "PFIZER INC",
+              "ticker": "PFE",
+              "cusip": "717081103",
+              "shares": 547232142,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "EXXON MOBIL CORP",
+              "ticker": "XOM",
+              "cusip": "30231G102",
+              "shares": 133239130,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Energy"
+            },
+            {
+              "name": "CHEVRON CORP",
+              "ticker": "CVX",
+              "cusip": "166764100",
+              "shares": 98854838,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Energy"
+            },
+            {
+              "name": "PROCTER & GAMBLE CO",
+              "ticker": "PG",
+              "cusip": "742718109",
+              "shares": 92863636,
+              "value": 15322500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Staples"
+            }
+          ],
+          "sector_breakdown": {
+            "Technology": 35.3,
+            "Healthcare": 20.43,
+            "Financials": 13.62,
+            "Consumer Discretionary": 10.21,
+            "Communication Services": 10.21,
+            "Energy": 6.81,
+            "Consumer Staples": 3.4
+          }
+        },
+        {
+          "period": "2025-09-30",
+          "period_label": "2025 Q3",
+          "filed_date": "2025-11-14",
+          "total_aum": 480000000,
+          "holdings": [
+            {
+              "name": "APPLE INC",
+              "ticker": "AAPL",
+              "cusip": "037833100",
+              "shares": 248086194,
+              "value": 45895946,
+              "investment_type": "SH",
+              "weight_pct": 9.56,
+              "sector": "Technology"
+            },
+            {
+              "name": "MICROSOFT CORP",
+              "ticker": "MSFT",
+              "cusip": "594918104",
+              "shares": 93678472,
+              "value": 38876566,
+              "investment_type": "SH",
+              "weight_pct": 8.1,
+              "sector": "Technology"
+            },
+            {
+              "name": "NVIDIA CORP",
+              "ticker": "NVDA",
+              "cusip": "67066G104",
+              "shares": 37642389,
+              "value": 32937091,
+              "investment_type": "SH",
+              "weight_pct": 6.86,
+              "sector": "Technology"
+            },
+            {
+              "name": "BROADCOM INC",
+              "ticker": "AVGO",
+              "cusip": "11135F101",
+              "shares": 16352841,
+              "value": 28617472,
+              "investment_type": "SH",
+              "weight_pct": 5.96,
+              "sector": "Technology"
+            },
+            {
+              "name": "SALESFORCE INC",
+              "ticker": "CRM",
+              "cusip": "79466L302",
+              "shares": 83605519,
+              "value": 25917711,
+              "investment_type": "SH",
+              "weight_pct": 5.4,
+              "sector": "Technology"
+            },
+            {
+              "name": "COSTCO WHOLESALE",
+              "ticker": "COST",
+              "cusip": "22160K105",
+              "shares": 20496516,
+              "value": 15987283,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "JPMORGAN CHASE & CO",
+              "ticker": "JPM",
+              "cusip": "46625H100",
+              "shares": 77986746,
+              "value": 15987283,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "VISA INC",
+              "ticker": "V",
+              "cusip": "92826C839",
+              "shares": 57097439,
+              "value": 15987283,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "MASTERCARD INC",
+              "ticker": "MA",
+              "cusip": "57636Q104",
+              "shares": 32627108,
+              "value": 15987283,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "BANK OF AMERICA CORP",
+              "ticker": "BAC",
+              "cusip": "060505104",
+              "shares": 380649595,
+              "value": 15987283,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "BERKSHIRE HATHAWAY CL B",
+              "ticker": "BRK.B",
+              "cusip": "084670702",
+              "shares": 43208872,
+              "value": 15987283,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "UNITEDHEALTH GROUP INC",
+              "ticker": "UNH",
+              "cusip": "91324P102",
+              "shares": 30744775,
+              "value": 15987283,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "JOHNSON & JOHNSON",
+              "ticker": "JNJ",
+              "cusip": "478160104",
+              "shares": 103143761,
+              "value": 15987283,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ABBVIE INC",
+              "ticker": "ABBV",
+              "cusip": "00287Y109",
+              "shares": 91355902,
+              "value": 15987283,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ELI LILLY & CO",
+              "ticker": "LLY",
+              "cusip": "532457108",
+              "shares": 18589863,
+              "value": 15987283,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "THERMO FISHER SCIENTIFIC",
+              "ticker": "TMO",
+              "cusip": "883556102",
+              "shares": 29334464,
+              "value": 15987283,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "EXXON MOBIL CORP",
+              "ticker": "XOM",
+              "cusip": "30231G102",
+              "shares": 139019852,
+              "value": 15987283,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Energy"
+            },
+            {
+              "name": "CHEVRON CORP",
+              "ticker": "CVX",
+              "cusip": "166764100",
+              "shares": 103143761,
+              "value": 15987283,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Energy"
+            },
+            {
+              "name": "PROCTER & GAMBLE CO",
+              "ticker": "PG",
+              "cusip": "742718109",
+              "shares": 96892624,
+              "value": 15987283,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Consumer Staples"
+            },
+            {
+              "name": "WALMART INC",
+              "ticker": "WMT",
+              "cusip": "931142103",
+              "shares": 168287189,
+              "value": 15987283,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Consumer Staples"
+            },
+            {
+              "name": "AMAZON COM INC",
+              "ticker": "AMZN",
+              "cusip": "023135106",
+              "shares": 71522057,
+              "value": 13589191,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "TESLA INC",
+              "ticker": "TSLA",
+              "cusip": "88160R101",
+              "shares": 54356764,
+              "value": 13589191,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "HOME DEPOT INC",
+              "ticker": "HD",
+              "cusip": "437076102",
+              "shares": 36727543,
+              "value": 13589191,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "ALPHABET INC",
+              "ticker": "GOOGL",
+              "cusip": "02079K305",
+              "shares": 77652520,
+              "value": 13589191,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "META PLATFORMS INC",
+              "ticker": "META",
+              "cusip": "30303M102",
+              "shares": 24934295,
+              "value": 13589191,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Communication Services"
+            }
+          ],
+          "sector_breakdown": {
+            "Technology": 35.88,
+            "Financials": 16.65,
+            "Healthcare": 16.65,
+            "Consumer Discretionary": 11.82,
+            "Energy": 6.66,
+            "Consumer Staples": 6.66,
+            "Communication Services": 5.66
+          }
+        }
+      ]
+    },
+    {
+      "cik": "0001067983",
+      "name_en": "BERKSHIRE HATHAWAY INC",
+      "name_ko": "버크셔 해서웨이",
+      "filings": [
+        {
+          "period": "2025-06-30",
+          "period_label": "2025 Q2",
+          "filed_date": "2025-08-14",
+          "total_aum": 290000000,
+          "holdings": [
+            {
+              "name": "APPLE INC",
+              "ticker": "AAPL",
+              "cusip": "037833100",
+              "shares": 133243243,
+              "value": 24650000,
+              "investment_type": "SH",
+              "weight_pct": 8.5,
+              "sector": "Technology"
+            },
+            {
+              "name": "MICROSOFT CORP",
+              "ticker": "MSFT",
+              "cusip": "594918104",
+              "shares": 50313253,
+              "value": 20880000,
+              "investment_type": "SH",
+              "weight_pct": 7.2,
+              "sector": "Technology"
+            },
+            {
+              "name": "NVIDIA CORP",
+              "ticker": "NVDA",
+              "cusip": "67066G104",
+              "shares": 20217142,
+              "value": 17690000,
+              "investment_type": "SH",
+              "weight_pct": 6.1,
+              "sector": "Technology"
+            },
+            {
+              "name": "BROADCOM INC",
+              "ticker": "AVGO",
+              "cusip": "11135F101",
+              "shares": 8782857,
+              "value": 15370000,
+              "investment_type": "SH",
+              "weight_pct": 5.3,
+              "sector": "Technology"
+            },
+            {
+              "name": "SALESFORCE INC",
+              "ticker": "CRM",
+              "cusip": "79466L302",
+              "shares": 44903225,
+              "value": 13920000,
+              "investment_type": "SH",
+              "weight_pct": 4.8,
+              "sector": "Technology"
+            },
+            {
+              "name": "ORACLE CORP",
+              "ticker": "ORCL",
+              "cusip": "68389X105",
+              "shares": 73144444,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Technology"
+            },
+            {
+              "name": "AMAZON COM INC",
+              "ticker": "AMZN",
+              "cusip": "023135106",
+              "shares": 51971052,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "TESLA INC",
+              "ticker": "TSLA",
+              "cusip": "88160R101",
+              "shares": 39498000,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "HOME DEPOT INC",
+              "ticker": "HD",
+              "cusip": "437076102",
+              "shares": 26687837,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "ALPHABET INC",
+              "ticker": "GOOGL",
+              "cusip": "02079K305",
+              "shares": 56425714,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "META PLATFORMS INC",
+              "ticker": "META",
+              "cusip": "30303M102",
+              "shares": 18118348,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "NETFLIX INC",
+              "ticker": "NFLX",
+              "cusip": "64110L106",
+              "shares": 14628888,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "JPMORGAN CHASE & CO",
+              "ticker": "JPM",
+              "cusip": "46625H100",
+              "shares": 48168292,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "VISA INC",
+              "ticker": "V",
+              "cusip": "92826C839",
+              "shares": 35266071,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "MASTERCARD INC",
+              "ticker": "MA",
+              "cusip": "57636Q104",
+              "shares": 20152040,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "BANK OF AMERICA CORP",
+              "ticker": "BAC",
+              "cusip": "060505104",
+              "shares": 235107142,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Financials"
+            },
+            {
+              "name": "UNITEDHEALTH GROUP INC",
+              "ticker": "UNH",
+              "cusip": "91324P102",
+              "shares": 18989423,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "JOHNSON & JOHNSON",
+              "ticker": "JNJ",
+              "cusip": "478160104",
+              "shares": 63706451,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ABBVIE INC",
+              "ticker": "ABBV",
+              "cusip": "00287Y109",
+              "shares": 56425714,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ELI LILLY & CO",
+              "ticker": "LLY",
+              "cusip": "532457108",
+              "shares": 11481976,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "THERMO FISHER SCIENTIFIC",
+              "ticker": "TMO",
+              "cusip": "883556102",
+              "shares": 18118348,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "PFIZER INC",
+              "ticker": "PFE",
+              "cusip": "717081103",
+              "shares": 352660714,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "EXXON MOBIL CORP",
+              "ticker": "XOM",
+              "cusip": "30231G102",
+              "shares": 85865217,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Energy"
+            },
+            {
+              "name": "CHEVRON CORP",
+              "ticker": "CVX",
+              "cusip": "166764100",
+              "shares": 63706451,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Energy"
+            },
+            {
+              "name": "PROCTER & GAMBLE CO",
+              "ticker": "PG",
+              "cusip": "742718109",
+              "shares": 59845454,
+              "value": 9874500,
+              "investment_type": "SH",
+              "weight_pct": 3.4,
+              "sector": "Consumer Staples"
+            }
+          ],
+          "sector_breakdown": {
+            "Technology": 35.3,
+            "Healthcare": 20.43,
+            "Financials": 13.62,
+            "Consumer Discretionary": 10.21,
+            "Communication Services": 10.21,
+            "Energy": 6.81,
+            "Consumer Staples": 3.4
+          }
+        },
+        {
+          "period": "2025-09-30",
+          "period_label": "2025 Q3",
+          "filed_date": "2025-11-14",
+          "total_aum": 304000000,
+          "holdings": [
+            {
+              "name": "APPLE INC",
+              "ticker": "AAPL",
+              "cusip": "037833100",
+              "shares": 157121254,
+              "value": 29067432,
+              "investment_type": "SH",
+              "weight_pct": 9.56,
+              "sector": "Technology"
+            },
+            {
+              "name": "MICROSOFT CORP",
+              "ticker": "MSFT",
+              "cusip": "594918104",
+              "shares": 59329698,
+              "value": 24621825,
+              "investment_type": "SH",
+              "weight_pct": 8.1,
+              "sector": "Technology"
+            },
+            {
+              "name": "NVIDIA CORP",
+              "ticker": "NVDA",
+              "cusip": "67066G104",
+              "shares": 23840179,
+              "value": 20860157,
+              "investment_type": "SH",
+              "weight_pct": 6.86,
+              "sector": "Technology"
+            },
+            {
+              "name": "BROADCOM INC",
+              "ticker": "AVGO",
+              "cusip": "11135F101",
+              "shares": 10356799,
+              "value": 18124399,
+              "investment_type": "SH",
+              "weight_pct": 5.96,
+              "sector": "Technology"
+            },
+            {
+              "name": "SALESFORCE INC",
+              "ticker": "CRM",
+              "cusip": "79466L302",
+              "shares": 52950161,
+              "value": 16414550,
+              "investment_type": "SH",
+              "weight_pct": 5.4,
+              "sector": "Technology"
+            },
+            {
+              "name": "COSTCO WHOLESALE",
+              "ticker": "COST",
+              "cusip": "22160K105",
+              "shares": 12981126,
+              "value": 10125279,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "JPMORGAN CHASE & CO",
+              "ticker": "JPM",
+              "cusip": "46625H100",
+              "shares": 49391604,
+              "value": 10125279,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "VISA INC",
+              "ticker": "V",
+              "cusip": "92826C839",
+              "shares": 36161710,
+              "value": 10125279,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "MASTERCARD INC",
+              "ticker": "MA",
+              "cusip": "57636Q104",
+              "shares": 20663834,
+              "value": 10125279,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "BANK OF AMERICA CORP",
+              "ticker": "BAC",
+              "cusip": "060505104",
+              "shares": 241078071,
+              "value": 10125279,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "BERKSHIRE HATHAWAY CL B",
+              "ticker": "BRK.B",
+              "cusip": "084670702",
+              "shares": 27365618,
+              "value": 10125279,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Financials"
+            },
+            {
+              "name": "UNITEDHEALTH GROUP INC",
+              "ticker": "UNH",
+              "cusip": "91324P102",
+              "shares": 19471690,
+              "value": 10125279,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "JOHNSON & JOHNSON",
+              "ticker": "JNJ",
+              "cusip": "478160104",
+              "shares": 65324380,
+              "value": 10125279,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ABBVIE INC",
+              "ticker": "ABBV",
+              "cusip": "00287Y109",
+              "shares": 57858737,
+              "value": 10125279,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "ELI LILLY & CO",
+              "ticker": "LLY",
+              "cusip": "532457108",
+              "shares": 11773580,
+              "value": 10125279,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "THERMO FISHER SCIENTIFIC",
+              "ticker": "TMO",
+              "cusip": "883556102",
+              "shares": 18578493,
+              "value": 10125279,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Healthcare"
+            },
+            {
+              "name": "EXXON MOBIL CORP",
+              "ticker": "XOM",
+              "cusip": "30231G102",
+              "shares": 88045904,
+              "value": 10125279,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Energy"
+            },
+            {
+              "name": "CHEVRON CORP",
+              "ticker": "CVX",
+              "cusip": "166764100",
+              "shares": 65324380,
+              "value": 10125279,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Energy"
+            },
+            {
+              "name": "PROCTER & GAMBLE CO",
+              "ticker": "PG",
+              "cusip": "742718109",
+              "shares": 61365327,
+              "value": 10125279,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Consumer Staples"
+            },
+            {
+              "name": "WALMART INC",
+              "ticker": "WMT",
+              "cusip": "931142103",
+              "shares": 106581884,
+              "value": 10125279,
+              "investment_type": "SH",
+              "weight_pct": 3.33,
+              "sector": "Consumer Staples"
+            },
+            {
+              "name": "AMAZON COM INC",
+              "ticker": "AMZN",
+              "cusip": "023135106",
+              "shares": 45297300,
+              "value": 8606487,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "TESLA INC",
+              "ticker": "TSLA",
+              "cusip": "88160R101",
+              "shares": 34425948,
+              "value": 8606487,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "HOME DEPOT INC",
+              "ticker": "HD",
+              "cusip": "437076102",
+              "shares": 23260775,
+              "value": 8606487,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Consumer Discretionary"
+            },
+            {
+              "name": "ALPHABET INC",
+              "ticker": "GOOGL",
+              "cusip": "02079K305",
+              "shares": 49179925,
+              "value": 8606487,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Communication Services"
+            },
+            {
+              "name": "META PLATFORMS INC",
+              "ticker": "META",
+              "cusip": "30303M102",
+              "shares": 15791719,
+              "value": 8606487,
+              "investment_type": "SH",
+              "weight_pct": 2.83,
+              "sector": "Communication Services"
+            }
+          ],
+          "sector_breakdown": {
+            "Technology": 35.88,
+            "Financials": 16.65,
+            "Healthcare": 16.65,
+            "Consumer Discretionary": 11.82,
+            "Energy": 6.66,
+            "Consumer Staples": 6.66,
+            "Communication Services": 5.66
+          }
+        }
+      ]
+    }
+  ]
+}

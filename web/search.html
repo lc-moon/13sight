@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>검색 — 13Sight</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- 고정 헤더 -->
+<header class="site-header">
+  <a href="index.html" class="logo">13Sight</a>
+  <form class="header-search" action="search.html" method="GET" role="search">
+    <input
+      type="text"
+      name="q"
+      id="header-search-input"
+      placeholder="기관명 또는 CIK 번호로 검색"
+      autocomplete="off"
+      aria-label="기관 검색"
+    />
+    <button type="submit" aria-label="검색">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="7"/>
+        <line x1="17.5" y1="17.5" x2="23" y2="23"/>
+      </svg>
+    </button>
+  </form>
+</header>
+
+<!-- 검색 결과 영역 -->
+<div id="search-container" class="search-page">
+  <!-- search.js가 여기에 결과를 렌더링 -->
+  <div class="loading-spinner">
+    <div class="spinner"></div>
+    <span>검색 중...</span>
+  </div>
+</div>
+
+<script src="js/search.js"></script>
+</body>
+</html>

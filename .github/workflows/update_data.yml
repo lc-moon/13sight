@@ -1,0 +1,64 @@
+name: Update 13F Data
+
+on:
+  # 매일 UTC 00:00 (한국시간 09:00) 자동 실행
+  schedule:
+    - cron: '0 0 * * *'
+  # 수동 실행 허용 (테스트용)
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # 데이터 파일 커밋을 위해 쓰기 권한 필요
+
+    steps:
+      # 1. 레포지토리 체크아웃
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Python 3.11 설치
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 3. 의존성 캐시 (속도 향상)
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      # 4. Python 패키지 설치
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # 5. 데이터 업데이트 스크립트 실행
+      - name: Run update pipeline
+        id: run_update
+        env:
+          # 번역 API 키 (GitHub Secrets에 설정)
+          TRANSLATE_API_KEY: ${{ secrets.TRANSLATE_API_KEY }}
+        run: |
+          OUTPUT=$(python scripts/main.py 2>&1 | tee /dev/stderr | tail -1)
+          echo "result=$OUTPUT" >> $GITHUB_OUTPUT
+
+      # 6. 업데이트된 경우에만 커밋 & 푸시
+      - name: Commit and push updated data
+        if: steps.run_update.outputs.result == 'UPDATED'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add web/data/institutions.json
+          git commit -m "chore: update 13F data - $(date -u +%Y-%m-%d)"
+          git push
+
+      # 7. 업데이트 없는 경우 로그 출력
+      - name: No update needed
+        if: steps.run_update.outputs.result != 'UPDATED'
+        run: echo "데이터 변경 없음 - 커밋 건너뜀"

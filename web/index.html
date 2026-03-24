@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>13Sight — 기관 투자자 13F 분석</title>
+  <meta name="description" content="미국 상위 100개 기관 투자자의 SEC 13F 포트폴리오를 분석하세요." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<main class="home-page">
+
+  <!-- 로고 -->
+  <h1 class="home-logo">13Sight</h1>
+
+  <!-- 검색 폼: method=GET으로 search.html?q=... 이동 -->
+  <form class="home-search-form" action="search.html" method="GET" role="search">
+    <div class="home-search-wrap">
+      <input
+        type="text"
+        name="q"
+        id="home-search-input"
+        placeholder="기관명 또는 CIK 번호로 검색"
+        autocomplete="off"
+        autocorrect="off"
+        spellcheck="false"
+        aria-label="기관 검색"
+      />
+      <button type="submit" class="home-search-btn" aria-label="검색">
+        <!-- 검색 아이콘 (SVG) -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="17.5" y1="17.5" x2="23" y2="23"/>
+        </svg>
+      </button>
+    </div>
+  </form>
+
+  <!-- 설명 텍스트 -->
+  <p class="home-subtitle">상위 100개 기관 투자자의 13F 포트폴리오를 분석하세요</p>
+
+</main>
+
+</body>
+</html>
