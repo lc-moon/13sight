@@ -15,7 +15,7 @@ permissions:
 # 동시에 하나의 배포만 실행 (진행 중인 배포는 취소하지 않고 대기)
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -30,8 +30,6 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v4
-        with:
-          enablement: true
 
       # web/ 폴더 전체를 Pages 아티팩트로 업로드
       - name: Upload artifact
