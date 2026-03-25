@@ -504,7 +504,12 @@ def get_holdings_for_filer(session: requests.Session, cik: str, adsh: str,
 
 def fetch_all(session: requests.Session, periods: list[str]) -> dict:
     """
-    지정된 분기들에 대해 상위 TOP_N 기관의 전체 데이터를 수집한다.
+    최신 분기 AUM 기준 상위 TOP_N 기관을 먼저 선별한 뒤,
+    해당 기관들의 모든 요청 분기 데이터를 수집한다.
+
+    흐름:
+      Step 1. 최신 분기 EFTS 검색 → AUM 조회 → 상위 TOP_N CIK 목록 확정
+      Step 2. 확정된 CIK 목록으로 각 분기 submissions API 직접 조회 → holdings 수집
 
     반환:
     {
@@ -517,67 +522,77 @@ def fetch_all(session: requests.Session, periods: list[str]) -> dict:
       }
     }
     """
-    print(f'티커 맵 로드 중...', file=sys.stderr)
+    print('티커 맵 로드 중...', file=sys.stderr)
     ticker_map = _build_ticker_map(session)
     print(f'  → {len(ticker_map)}개 종목 로드됨', file=sys.stderr)
 
+    # ── Step 1: 최신 분기 기준 상위 TOP_N 기관 선별 ──────────────────────
+    latest_period = periods[0]
+    print(f'\n[Step 1] {latest_period} 기준 상위 {TOP_N}개 기관 선별 중...', file=sys.stderr)
+
+    filers = discover_filers_for_period(session, latest_period)
+    print(f'  → {len(filers)}개 기관 발견', file=sys.stderr)
+
+    aum_data = []
+    for i, filer in enumerate(filers):
+        print(
+            f'  AUM 조회 중... [{i+1}/{len(filers)}] {filer["name"][:40]}',
+            file=sys.stderr, end='\r'
+        )
+        aum = get_aum_for_filer(session, filer['cik'], filer['adsh'])
+        if aum is not None:
+            aum_data.append({**filer, 'aum': aum})
+
+    print(f'\n  → AUM 조회 완료: {len(aum_data)}개 기관', file=sys.stderr)
+
+    # MANDATORY_CIKS: EFTS 검색에서 누락될 수 있는 중요 기관 강제 포함
+    for must_cik in MANDATORY_CIKS:
+        if not any(f['cik'] == must_cik for f in aum_data):
+            print(f'  [필수] {must_cik} 강제 포함 시도...', file=sys.stderr)
+            filer_info = _get_mandatory_filer(session, must_cik, latest_period)
+            if filer_info:
+                aum = get_aum_for_filer(session, must_cik, filer_info['adsh'])
+                if aum is not None:
+                    aum_data.append({**filer_info, 'aum': aum})
+                    print(f'  → {filer_info["name"]} 추가 완료', file=sys.stderr)
+
+    aum_data.sort(key=lambda x: x['aum'], reverse=True)
+    top_ciks  = [f['cik']  for f in aum_data[:TOP_N]]
+    top_names = {f['cik']: f['name'] for f in aum_data[:TOP_N]}
+    print(f'  → 상위 {len(top_ciks)}개 기관 확정', file=sys.stderr)
+
+    # ── Step 2: 각 분기 데이터 수집 (submissions API 직접 조회) ──────────
     result = {}
 
     for period in periods:
-        print(f'\n[분기 {period}] 기관 목록 수집 중...', file=sys.stderr)
-        filers = discover_filers_for_period(session, period)
-        print(f'  → {len(filers)}개 기관 발견', file=sys.stderr)
-
-        # 각 기관의 AUM 조회
-        aum_data = []
-        for i, filer in enumerate(filers):
-            print(
-                f'  AUM 조회 중... [{i+1}/{len(filers)}] {filer["name"]}',
-                file=sys.stderr, end='\r'
-            )
-            aum = get_aum_for_filer(session, filer['cik'], filer['adsh'])
-            if aum is not None:
-                aum_data.append({**filer, 'aum': aum})
-
-        print(f'\n  → AUM 조회 완료: {len(aum_data)}개 기관', file=sys.stderr)
-
-        # EDGAR 검색에서 누락된 필수 기관 강제 추가
-        for must_cik in MANDATORY_CIKS:
-            if not any(f['cik'] == must_cik for f in aum_data):
-                print(f'  [필수] {must_cik} 강제 포함 시도...', file=sys.stderr)
-                filer_info = _get_mandatory_filer(session, must_cik, period)
-                if filer_info:
-                    aum = get_aum_for_filer(session, filer_info['cik'], filer_info['adsh'])
-                    if aum is not None:
-                        aum_data.append({**filer_info, 'aum': aum})
-                        print(f'  → {filer_info["name"]} 추가 완료', file=sys.stderr)
-
-        # AUM 내림차순 정렬 → 상위 TOP_N 선별
-        aum_data.sort(key=lambda x: x['aum'], reverse=True)
-        top_filers = aum_data[:TOP_N]
-
+        print(f'\n[Step 2] {period} 데이터 수집 중... ({len(top_ciks)}개 기관)', file=sys.stderr)
         period_result = {}
 
-        for i, filer in enumerate(top_filers):
+        for i, cik in enumerate(top_ciks):
+            name = top_names.get(cik, cik)
             print(
-                f'  보유 종목 수집 중... [{i+1}/{len(top_filers)}] {filer["name"]}',
+                f'  [{i+1}/{len(top_ciks)}] {name[:40]}',
                 file=sys.stderr, end='\r'
             )
+
+            # submissions API로 해당 분기 13F-HR 제출 정보 조회
+            filer_info = _get_mandatory_filer(session, cik, period)
+            if filer_info is None:
+                continue  # 해당 분기 미제출
+
+            aum = get_aum_for_filer(session, cik, filer_info['adsh'])
             holdings = get_holdings_for_filer(
-                session, filer['cik'], filer['adsh'], ticker_map
+                session, cik, filer_info['adsh'], ticker_map
             )
 
-            # 제출일: 검색 결과에서 가져오거나 분기 종료일로 대체
-            filed_date = filer.get('filed_date') or period
-
-            period_result[filer['cik']] = {
-                'name_en':    filer['name'],
-                'filed_date': filed_date,
-                'total_aum':  filer['aum'],
+            period_result[cik] = {
+                'name_en':    filer_info['name'],
+                'filed_date': filer_info['filed_date'],
+                'total_aum':  aum or 0,
                 'holdings':   holdings,
             }
 
-        print(f'\n  → {period} 수집 완료', file=sys.stderr)
+        print(f'\n  → {period} 수집 완료: {len(period_result)}개 기관', file=sys.stderr)
         result[period] = period_result
 
     return result
