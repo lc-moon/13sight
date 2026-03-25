@@ -36,6 +36,11 @@ INFO_TABLE_NS = 'http://www.sec.gov/edgar/document/thirteenf/informationtable'
 # 상위 N개 기관만 수집
 TOP_N = 100
 
+# EDGAR 검색에서 누락되더라도 반드시 포함할 기관 CIK 목록
+MANDATORY_CIKS = [
+    '0001067983',  # BERKSHIRE HATHAWAY INC
+]
+
 
 def get_session() -> requests.Session:
     """
@@ -251,18 +256,66 @@ def get_aum_for_filer(session: requests.Session, cik: str, adsh: str) -> Optiona
 
     try:
         resp = _get(session, url)
-        root = ET.fromstring(resp.content)
+        content = resp.content
+        try:
+            root = ET.fromstring(content)
+        except ET.ParseError:
+            try:
+                from lxml import etree as lxml_et
+                root = lxml_et.fromstring(content, lxml_et.XMLParser(recover=True))
+            except Exception:
+                return None
     except Exception as e:
         print(f'  [경고] primary_doc.xml 파싱 실패 ({cik}): {e}', file=sys.stderr)
-        return None
+        # primary_doc.xml 없으면 인덱스에서 다른 XML 시도
+        return _get_aum_from_index(session, cik, adsh)
 
     # tableValueTotal 태그 검색 (네임스페이스 무관)
     for elem in root.iter():
         if elem.tag.endswith('tableValueTotal') and elem.text:
             try:
-                return int(elem.text.strip().replace(',', ''))
+                val = int(elem.text.strip().replace(',', ''))
+                if val > 0:
+                    return val
             except ValueError:
                 pass
+
+    # tableValueTotal 없으면 인덱스에서 다른 XML 시도
+    return _get_aum_from_index(session, cik, adsh)
+
+
+def _get_aum_from_index(session: requests.Session, cik: str, adsh: str) -> Optional[int]:
+    """인덱스 페이지에서 첫 번째 XML 파일을 읽어 AUM을 추출한다."""
+    adsh_nodash = adsh.replace('-', '')
+    cik_nodash  = cik.lstrip('0')
+    base_url    = f'https://www.sec.gov/Archives/edgar/data/{cik_nodash}/{adsh_nodash}'
+    index_url   = f'{base_url}/{adsh}-index.htm'
+    try:
+        resp = _get(session, index_url)
+        import re
+        xml_files = re.findall(r'href="([^"]+\.xml)"', resp.text, re.IGNORECASE)
+        for fname in xml_files:
+            if not fname.startswith('http'):
+                fname = f'https://www.sec.gov{fname}' if fname.startswith('/') else f'{base_url}/{fname}'
+            try:
+                r2 = _get(session, fname)
+                try:
+                    root2 = ET.fromstring(r2.content)
+                except ET.ParseError:
+                    from lxml import etree as lxml_et
+                    root2 = lxml_et.fromstring(r2.content, lxml_et.XMLParser(recover=True))
+                for elem in root2.iter():
+                    if elem.tag.endswith('tableValueTotal') and elem.text:
+                        try:
+                            val = int(elem.text.strip().replace(',', ''))
+                            if val > 0:
+                                return val
+                        except ValueError:
+                            pass
+            except Exception:
+                continue
+    except Exception:
+        pass
     return None
 
 
@@ -275,12 +328,14 @@ def _get_holdings_doc_url(session: requests.Session, cik: str, adsh: str) -> Opt
     cik_nodash  = cik.lstrip('0')
     base_url    = f'https://www.sec.gov/Archives/edgar/data/{cik_nodash}/{adsh_nodash}'
 
-    # 파일링 인덱스 JSON으로 파일 목록 조회
-    index_url = f'{EDGAR_BASE}/submissions/{adsh}.json' if False else \
-                f'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={cik_nodash}&type=13F-HR&dateb=&owner=include&count=10'
+    # 인덱스 파일명은 대시 포함 형식 필요: XXXXXXXXXX-YY-NNNNNN
+    if '-' in adsh:
+        adsh_dashed = adsh
+    else:
+        adsh_dashed = f'{adsh_nodash[:10]}-{adsh_nodash[10:12]}-{adsh_nodash[12:]}'
 
     # 인덱스 HTML 파싱으로 XML 파일 목록 추출
-    index_html_url = f'{base_url}/{adsh}-index.htm'
+    index_html_url = f'{base_url}/{adsh_dashed}-index.htm'
     try:
         resp = _get(session, index_html_url)
         # href에서 .xml 파일 경로 추출 (primary_doc.xml 제외)
@@ -292,8 +347,19 @@ def _get_holdings_doc_url(session: requests.Session, cik: str, adsh: str) -> Opt
             if 'primary_doc' not in fname.lower():
                 xml_files.append(fname)
 
-        if xml_files:
-            fname = xml_files[0]
+        # xslForm13F_X02 등 XSLT 변환 디렉토리 파일은 제외, 직접 경로 우선 선택
+        direct_xml = [f for f in xml_files if '/' not in f.split('?')[0].lstrip('/').split('/', 3)[-1]]
+        # 상대 경로가 단순 파일명인 것 (슬래시 없거나 1단계 경로만)
+        preferred = []
+        for f in xml_files:
+            # xsl 변환 디렉토리 제외
+            if 'xsl' in f.lower():
+                continue
+            preferred.append(f)
+
+        candidates = preferred if preferred else xml_files
+        if candidates:
+            fname = candidates[0]
             # 상대 경로면 절대 경로로 변환
             if not fname.startswith('http'):
                 if fname.startswith('/'):
@@ -376,11 +442,13 @@ def get_holdings_for_filer(session: requests.Session, cik: str, adsh: str,
         try:
             root = ET.fromstring(content)
         except ET.ParseError:
-            # 불규칙한 XML은 lxml의 recover 모드로 재시도
-            from lxml import etree as lxml_et
-            root_lxml = lxml_et.fromstring(content, lxml_et.XMLParser(recover=True))
-            # lxml 파싱 결과를 문자열로 변환 후 표준 라이브러리로 재파싱
-            root = ET.fromstring(lxml_et.tostring(root_lxml))
+            # 불규칙한 XML은 lxml의 recover 모드로 직접 사용
+            try:
+                from lxml import etree as lxml_et
+                root = lxml_et.fromstring(content, lxml_et.XMLParser(recover=True))
+            except Exception as e2:
+                print(f'  [경고] holdings XML 파싱 실패 ({cik}): {e2}', file=sys.stderr)
+                return []
     except Exception as e:
         print(f'  [경고] holdings XML 파싱 실패 ({cik}): {e}', file=sys.stderr)
         return []
@@ -473,6 +541,17 @@ def fetch_all(session: requests.Session, periods: list[str]) -> dict:
 
         print(f'\n  → AUM 조회 완료: {len(aum_data)}개 기관', file=sys.stderr)
 
+        # EDGAR 검색에서 누락된 필수 기관 강제 추가
+        for must_cik in MANDATORY_CIKS:
+            if not any(f['cik'] == must_cik for f in aum_data):
+                print(f'  [필수] {must_cik} 강제 포함 시도...', file=sys.stderr)
+                filer_info = _get_mandatory_filer(session, must_cik, period)
+                if filer_info:
+                    aum = get_aum_for_filer(session, filer_info['cik'], filer_info['adsh'])
+                    if aum is not None:
+                        aum_data.append({**filer_info, 'aum': aum})
+                        print(f'  → {filer_info["name"]} 추가 완료', file=sys.stderr)
+
         # AUM 내림차순 정렬 → 상위 TOP_N 선별
         aum_data.sort(key=lambda x: x['aum'], reverse=True)
         top_filers = aum_data[:TOP_N]
@@ -502,6 +581,35 @@ def fetch_all(session: requests.Session, periods: list[str]) -> dict:
         result[period] = period_result
 
     return result
+
+
+def _get_mandatory_filer(session: requests.Session, cik: str, period: str) -> Optional[dict]:
+    """
+    특정 CIK의 특정 분기 13F-HR 제출 정보를 submissions API에서 직접 조회한다.
+    MANDATORY_CIKS에 포함된 기관이 EDGAR 검색에서 누락된 경우 사용한다.
+    """
+    url = f'{EDGAR_BASE}/submissions/CIK{cik}.json'
+    try:
+        resp = _get(session, url)
+        data = resp.json()
+        name    = data.get('name', cik)
+        recent  = data.get('filings', {}).get('recent', {})
+        forms        = recent.get('form', [])
+        accessions   = recent.get('accessionNumber', [])
+        report_dates = recent.get('reportDate', [])
+        filed_dates  = recent.get('filingDate', [])
+
+        for form, acc, rdate, fdate in zip(forms, accessions, report_dates, filed_dates):
+            if form == '13F-HR' and rdate == period:
+                return {
+                    'cik':        cik,
+                    'adsh':       acc,  # 대시 포함 형식 유지 (인덱스 URL 구성에 필요)
+                    'name':       name,
+                    'filed_date': fdate,
+                }
+    except Exception as e:
+        print(f'  [경고] {cik} 강제 포함 조회 실패: {e}', file=sys.stderr)
+    return None
 
 
 def _get_filed_date(session: requests.Session, cik: str, adsh: str) -> Optional[str]:
