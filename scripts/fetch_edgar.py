@@ -453,36 +453,54 @@ def get_holdings_for_filer(session: requests.Session, cik: str, adsh: str,
         print(f'  [경고] holdings XML 파싱 실패 ({cik}): {e}', file=sys.stderr)
         return []
 
-    # XML 네임스페이스 처리
-    ns = {'t': INFO_TABLE_NS}
-    info_tables = root.findall('t:infoTable', ns)
+    # 실제 XML에서 네임스페이스를 동적으로 감지한다
+    raw_tag = root.tag  # 예: '{http://www.sec.gov/...}informationTable' 또는 'informationTable'
+    detected_ns = ''
+    if raw_tag.startswith('{'):
+        detected_ns = raw_tag[1:raw_tag.index('}')]
 
-    # 네임스페이스 없이도 시도
-    if not info_tables:
-        info_tables = root.findall('infoTable')
+    def _find_all_tables(node):
+        """네임스페이스에 관계없이 infoTable 요소를 재귀 탐색한다."""
+        candidates = []
+        for ns_uri in ([detected_ns, INFO_TABLE_NS] if detected_ns else [INFO_TABLE_NS, '']):
+            tag = f'{{{ns_uri}}}infoTable' if ns_uri else 'infoTable'
+            candidates = node.findall(f'.//{tag}')
+            if candidates:
+                return candidates, ns_uri
+        return [], ''
+
+    info_tables, active_ns = _find_all_tables(root)
+
+    def _find_text(node, tag: str) -> str:
+        """네임스페이스 포함/미포함으로 태그 텍스트를 재귀 조회한다."""
+        full_tag = f'{{{active_ns}}}{tag}' if active_ns else tag
+        el = node.find(f'.//{full_tag}')
+        if el is None:
+            el = node.find(f'.//{tag}')
+        return (el.text or '').strip() if el is not None else ''
 
     holdings = []
     for item in info_tables:
-        def _text(tag: str) -> str:
-            """네임스페이스 포함/미포함으로 태그 텍스트를 조회한다."""
-            el = item.find(f't:{tag}', ns) or item.find(tag)
-            return (el.text or '').strip() if el is not None else ''
+        name      = _find_text(item, 'nameOfIssuer')
+        cusip     = _find_text(item, 'cusip')
+        value_str = _find_text(item, 'value')
 
-        name   = _text('nameOfIssuer')
-        cusip  = _text('cusip')
-        shares_str = _text('sshPrnamt') or _text('shrsOrPrnAmt')
-        value_str  = _text('value')
-        inv_type   = _text('investmentDiscretion') or 'SH'
+        # shrsOrPrnAmt 하위의 sshPrnamt 탐색
+        shares_str = _find_text(item, 'sshPrnamt')
+        inv_type   = _find_text(item, 'sshPrnamtType') or 'SH'
 
         # 수량/금액 파싱
         try:
             shares = int(shares_str.replace(',', ''))
-        except ValueError:
+        except (ValueError, AttributeError):
             shares = 0
         try:
             value = int(value_str.replace(',', ''))
-        except ValueError:
+        except (ValueError, AttributeError):
             value = 0
+
+        if not name and not cusip:
+            continue  # 파싱 실패 레코드 건너뜀
 
         # 티커 조회
         ticker = _resolve_ticker(name, ticker_map) if ticker_map else None
@@ -494,7 +512,7 @@ def get_holdings_for_filer(session: requests.Session, cik: str, adsh: str,
             'shares':          shares,
             'value':           value,
             'investment_type': inv_type[:2] if inv_type else 'SH',
-            'sector':          'Unknown',  # 섹터는 별도 매핑 필요
+            'sector':          'Unknown',
         })
 
     # 평가금액 내림차순 정렬
